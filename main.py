@@ -1,16 +1,28 @@
 import time
 from turtle import Screen
 
+from background import draw_ocean, draw_waves, draw_road
 from car_manager import CarManager
 from player import Player
 from scoreboard import Scoreboard
 
-# * Main Game Setup
-screen = Screen()
-screen.setup(width=600, height=600)
-screen.bgcolor("AntiqueWhite")
-screen.title("Turtle Crossing")
-screen.tracer(0)
+def setup_screen():
+    """Initial screen setup with background elements."""
+    screen = Screen()
+    screen.setup(width=600, height=600)
+    screen.bgcolor("AntiqueWhite")
+    screen.title("Turtle Crossing")
+
+    screen.tracer(0)    # ? Disable auto-refresh to optimize animation
+
+    draw_ocean()
+    draw_waves()
+    draw_road()
+
+    screen.update()     # ? Render all elements instantly
+    return screen
+
+screen = setup_screen()
 
 player = Player()
 car_manager = CarManager()
