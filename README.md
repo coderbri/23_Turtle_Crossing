@@ -16,8 +16,6 @@
 
 - **Incremental Difficulty:** Increasing car speed as the player progresses to higher levels.
 
----
-
 ## Gameplay Mechanics
 
 1. The turtle moves forward when pressing the "Up" key ("W"). It can only move forward, not back, left, or right.
